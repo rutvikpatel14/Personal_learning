@@ -30,18 +30,38 @@ function NavBar() {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/fcomponent">
-                  Function Component
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/CComponent">
-                  Class Component
-                </Link>
-              </li>
-              <li className="nav-item">
                 <Link className="nav-link" to="/counter">
                   Counter
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/counterFunction">
+                  CounterFunction
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/SignupForm">
+                  SignUp
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/SignInForm">
+                  SignIn
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/BgColor">
+                  BgColor
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/TODO">
+                  TODO
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/UserInput">
+                  UserInput
                 </Link>
               </li>
             </ul>
