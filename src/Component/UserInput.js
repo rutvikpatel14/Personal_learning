@@ -13,26 +13,26 @@ function UserInput() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        const updatedUsers = [...users, user];
-        localStorage.setItem('users', JSON.stringify(updatedUsers));
-        setUsers(updatedUsers);
+        const UserData = [...users, user];
+        localStorage.setItem('users', JSON.stringify(UserData));
+        setUsers(UserData);
         setUser({ name: '', mobile: '', email: '', password: '' });
     };
 
     const handleEdit = (index) => {
         const editedUser = users[index];
         setUser(editedUser);
-        const updatedUsers = [...users];
-        updatedUsers.splice(index, 1);
-        localStorage.setItem('users', JSON.stringify(updatedUsers));
-        setUsers(updatedUsers);
+        const UserData = [...users];
+        UserData.splice(index, 1);
+        localStorage.setItem('users', JSON.stringify(UserData));
+        setUsers(UserData);
     };
 
     const handleDelete = (index) => {
-        const updatedUsers = [...users];
-        updatedUsers.splice(index, 1);
-        localStorage.setItem('users', JSON.stringify(updatedUsers));
-        setUsers(updatedUsers);
+        const UserData = [...users];
+        UserData.splice(index, 1);
+        localStorage.setItem('users', JSON.stringify(UserData));
+        setUsers(UserData);
     };
 
     return (
