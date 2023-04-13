@@ -2,10 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import GetApi from "./Component/GetApi";
+import AxiosPro from "./Component/AxiosPro";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-      <App />
+      {/* <App /> */}
+      <AxiosPro/>
   </React.StrictMode>
 );
 

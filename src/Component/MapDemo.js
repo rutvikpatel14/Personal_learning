@@ -1,6 +1,5 @@
 function MapDemo() {
   const myarray = ["A", "B", "C", "D", "E"];
-  const myarray1 = ["A", "B", "C", "D", "E"];
   return (
     <div>
       <table border="1">

@@ -1,6 +1,7 @@
 import React, { useState,useEffect } from "react";
 
 function Todo() {
+  
   const [tasks, setTasks] = useState([]);
 
   useEffect(() => {
@@ -47,10 +48,7 @@ function Todo() {
             <button onClick={() => handleDelete(index)}>Delete</button>
             <button
               onClick={() =>
-                handleEdit(
-                  index,
-                  prompt("Enter the new task text:", task.text)
-                )
+                handleEdit(index , prompt("Enter the new task text:", task.text))
               }
             >
               Edit
