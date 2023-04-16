@@ -1,90 +1,88 @@
 import React, { Component } from "react";
+// import "./Calculator.css";
 
-
-class Sum extends Component {
+class Calculator extends Component {
   constructor(props) {
     super(props);
-    this.state = { temp: "" };
+    this.state = { input: "", output: "" };
   }
 
-  changeProcess(event) {
-    this.setState({ [event.target.name]: event.target.value });
-  }
+  handleInput = (value) => {
+    this.setState((prevState) => ({
+      input: prevState.input + value,
+    }));
+  };
 
-  clickProcess(event) {
-    const { txt1, txt2 } = this.state;
-    var ans;
+  handleAdd = () => {
+    const { input } = this.state;
+    const numbers = input.split("+");
+    const sum = numbers.reduce((acc, curr) => acc + parseInt(curr), 0);
+    this.setState({ output: sum });
+  };
 
-    if (!txt1 || !txt2) {
-      alert("Enter number");
-    }
-    if (event.target.name === "Add") {
-       ans = parseInt(txt1) + parseInt(txt2);
-      this.setState({ temp: ans });
-      event.preventDefault();
-    } else if (event.target.name === "sub") {
-       ans = parseInt(txt1) - parseInt(txt2);
-      this.setState({ temp: ans });
-      event.preventDefault();
-    } else if (event.target.name === "mul") {
-       ans = parseInt(txt1) * parseInt(txt2);
-      this.setState({ temp: ans });
-      event.preventDefault();
-    } else if (event.target.name === "div") {
-       ans = parseInt(txt1) / parseInt(txt2);
-      this.setState({ temp: ans });
-      event.preventDefault();
-    }
-  }
+  handleSubtract = () => {
+    const { input } = this.state;
+    const numbers = input.split("-");
+    const difference = numbers.reduce((acc, curr) => acc - parseInt(curr), 0);
+    this.setState({ output: difference });
+  };
+
+  handleMultiply = () => {
+    const { input } = this.state;
+    const numbers = input.split("*");
+    const product = numbers.reduce((acc, curr) => acc * parseInt(curr), 1);
+    this.setState({ output: product });
+  };
+
+  handleDivide = () => {
+    const { input } = this.state;
+    const numbers = input.split("/");
+    const quotient = numbers.reduce((acc, curr) => acc / parseInt(curr), 1);
+    this.setState({ output: quotient });
+  };
+
+  handleClear = () => {
+    this.setState({ input: "", output: "" });
+  };
+
   render() {
     return (
-      <div className="container">
-        <form onSubmit={this.clickProcess.bind(this)}>
-            <br/>
-          <input
-            type="text"
-            placeholder="Enter number"
-            onChange={this.changeProcess.bind(this)}
-            name="txt1"
-          />
-          <br />
-          <input
-            type="text"
-            placeholder="Enter number"
-            onChange={this.changeProcess.bind(this)}
-            name="txt2"
-          />
-          <br />
-          <input
-            type="button"
-            value="Sum"
-            name="Add"
-            onClick={this.clickProcess.bind(this)}
-          />
-          <input
-            type="button"
-            value="Subtraction"
-            name="sub"
-            onClick={this.clickProcess.bind(this)}
-          />
-          <input
-            type="button"
-            value="Multiplication"
-            name="mul"
-            onClick={this.clickProcess.bind(this)}
-          />
-          <input
-            type="button"
-            value="Division"
-            name="div"
-            onClick={this.clickProcess.bind(this)}
-          />
-        </form>
-        <br />
-        {this.state.temp}
+      <div className="calculator">
+        <div className="input">{this.state.input}</div>
+        <div className="output">{this.state.output}</div>
+        <div className="keypad">
+          <div className="row">
+            <button onClick={() => this.handleInput("7")}>7</button>
+            <button onClick={() => this.handleInput("8")}>8</button>
+            <button onClick={() => this.handleInput("9")}>9</button>
+            <button onClick={() => this.handleInput("+")}>+</button>
+          </div>
+          <div className="row">
+            <button onClick={() => this.handleInput("4")}>4</button>
+            <button onClick={() => this.handleInput("5")}>5</button>
+            <button onClick={() => this.handleInput("6")}>6</button>
+            <button onClick={() => this.handleInput("-")}>-</button>
+          </div>
+          <div className="row">
+            <button onClick={() => this.handleInput("1")}>1</button>
+            <button onClick={() => this.handleInput("2")}>2</button>
+            <button onClick={() => this.handleInput("3")}>3</button>
+            <button onClick={() => this.handleInput("*")}>*</button>
+          </div>
+          <div className="row">
+            <button onClick={() => this.handleInput("0")}>0</button>
+            <button onClick={() => this.handleClear()}>C</button>
+            <button onClick={() => this.handleDivide("/")}>/</button>
+            <button onClick={() => this.handleMultiply()}>X</button>
+          </div>
+          <div className="row">
+            <button onClick={() => this.handleAdd()}>+</button>
+            <button onClick={() => this.handleSubtract()}>-</button>
+          </div>
+        </div>
       </div>
     );
   }
 }
 
-export default Sum;
+export default Calculator;

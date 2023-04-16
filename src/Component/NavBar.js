@@ -19,14 +19,29 @@ function NavBar() {
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item ">
-                <Link className="nav-link active" aria-current="page"  to="/">
-                  Calculator
+              <li className="nav-item">
+                <Link className="nav-link active" aria-current="page" to="/TODO">
+                  TODO
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/localstorage">
-                  LocalStorage
+                <Link className="nav-link" to="/UserInput">
+                  Form Crud
+                </Link>
+                </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/axiosPro">
+                  Api
+                </Link>
+                </li>
+                <li>
+                <Link className="nav-link "  to="/">
+                  Calculator
+                </Link>
+              </li>
+                <li>
+                <Link className="nav-link "  to="/weather">
+                  WeatherApp
                 </Link>
               </li>
               <li className="nav-item">
@@ -49,21 +64,7 @@ function NavBar() {
                   SignIn
                 </Link>
               </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/BgColor">
-                  BgColor
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/TODO">
-                  TODO
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/UserInput">
-                  UserInput
-                </Link>
-              </li>
+              
             </ul>
           </div>
         </div>
